@@ -1,0 +1,27 @@
+  {
+    "family": "medical-chatbot-task",
+    "taskRoleArn": "arn:aws:iam::795909884983:role/medical-chatbot-task-role",
+    "executionRoleArn": "arn:aws:iam::795909884983:role/medical-chatbot-task-role",
+    "networkMode": "awsvpc",
+    "containerDefinitions": [
+      {
+        "name": "medical-chatbot",
+        "image": "795909884983.dkr.ecr.us-east-1.amazonaws.com/medical-chatbot:latest",
+        "memory": 8192,
+        "cpu": 4096,
+        "essential": true,
+        "portMappings": [
+          {
+            "containerPort": 8080,
+            "hostPort": 8080,
+            "protocol": "tcp"
+          }
+        ]
+      }
+    ],
+    "requiresCompatibilities": ["FARGATE"],
+    "cpu": "4096",
+    "memory": "8192"
+  }
+  
+  
